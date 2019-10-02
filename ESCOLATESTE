@@ -1,0 +1,60 @@
+
+CREATE DATABASE [ESCOLATESTE]
+
+USE [ESCOLATESTE]
+ 
+GO
+
+CREATE TABLE [dbo].[__MigrationHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ContextKey] [nvarchar](300) NOT NULL,
+	[Model] [varbinary](max) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC,
+	[ContextKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+CREATE TABLE [dbo].[alunos](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[fone] [char](14) NOT NULL,
+	[data_nascimento] [date] NULL,
+	[idCursos] [int] NULL,
+	[IdInstrutores] [int] NULL,
+	[cpfAlunos] [char](11) NOT NULL,
+	[emailAluno] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_dbo.alunos] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[cursos](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[descricao] [char](11) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[campos2] [varchar](50) NOT NULL,
+	[hora] [char](14) NOT NULL,
+	[requisito] [date] NULL,
+	[idAluno] [int] NULL,
+	[idInstrutures] [int] NULL,
+ CONSTRAINT [PK_dbo.cursos] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[instrutor](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[email] [varchar](50) NOT NULL,
+	[valor_hora] [int] NULL,
+	[certificados] [varchar](255) NULL,
+ CONSTRAINT [PK_dbo.TB_INSTRUTOR] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
