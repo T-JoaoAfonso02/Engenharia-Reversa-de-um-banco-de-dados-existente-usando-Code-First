@@ -1,4 +1,4 @@
-**Engenharia Reversa de um banco de dados existente usando Code-First me Fluent API..
+**Engenharia Reversa de um banco de dados existente usando Code-First Fluent API..
 
   
 Nesse exemplo, dica útil para  um programador .Net,  veremos como  fazer engenharia reversa de uma banco de dados  partindo da existência de um banco de dados, sem precisar  “mexer na estrutura do seu banco legado”.  Para isso usaremos alguns recursos do CodeFirs Entity Framework e API Fluent. Com ele podemos facilmente mapear classes de um modelo de banco de dados, inclusive melhorando as nomeclaturas da propriedade dos objetos da base.
